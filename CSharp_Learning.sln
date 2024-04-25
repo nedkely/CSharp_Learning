@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson03_FontColorDialog", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson04_DefaultApplicationTools", "Lesson04_DefaultApplicationTools\Lesson04_DefaultApplicationTools.csproj", "{B4086851-F10D-4F20-9E1A-E3C3A023004E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson05_IfStatmentForStructures", "Lesson05_IfStatmentForStructures\Lesson05_IfStatmentForStructures.csproj", "{36A47321-ED23-4972-B4DE-BA07A533DE4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B4086851-F10D-4F20-9E1A-E3C3A023004E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4086851-F10D-4F20-9E1A-E3C3A023004E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4086851-F10D-4F20-9E1A-E3C3A023004E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36A47321-ED23-4972-B4DE-BA07A533DE4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36A47321-ED23-4972-B4DE-BA07A533DE4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36A47321-ED23-4972-B4DE-BA07A533DE4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36A47321-ED23-4972-B4DE-BA07A533DE4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
