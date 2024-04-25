@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace lesson01_MessageBox
 {
-    public partial class Form1 : Form
+    public partial class frmMessageBox : Form
     {
-        public Form1()
+        public frmMessageBox()
         {
             InitializeComponent();
         }

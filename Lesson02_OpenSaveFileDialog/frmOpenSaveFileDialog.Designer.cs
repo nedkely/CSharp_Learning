@@ -1,7 +1,7 @@
 ﻿
 namespace Lesson02_OpenSaveDialog
 {
-    partial class Form1
+    partial class frmOpenSaveFileDialog
     {
         /// <summary>
         ///  Required designer variable.

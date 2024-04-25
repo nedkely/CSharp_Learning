@@ -1,7 +1,7 @@
 ﻿
 namespace lesson01_MessageBox
 {
-    partial class Form1
+    partial class frmMessageBox
     {
         /// <summary>
         ///  Required designer variable.

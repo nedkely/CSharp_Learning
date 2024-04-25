@@ -11,9 +11,9 @@ using System.IO;
 
 namespace Lesson02_OpenSaveDialog
 {
-    public partial class Form1 : Form
+    public partial class frmOpenSaveFileDialog : Form
     {
-        public Form1()
+        public frmOpenSaveFileDialog()
         {
             InitializeComponent();
         }
