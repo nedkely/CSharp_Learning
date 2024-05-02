@@ -27,6 +27,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson08_ClassFunctions", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson09_Files", "Lesson09_Files\Lesson09_Files.csproj", "{83D48FD4-D2EA-4AF0-8DD6-DE473870B581}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP.NET_Core", "ASP.NET_Core", "{A4B58E61-6E37-4B92-AC15-5BBF75D5F2F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login_Register_Sample", "ASP.NET_Core\Login_Register_Sample\Login_Register_Sample.csproj", "{2A6F0CC9-94D9-426E-B51B-CCB181653D1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +77,10 @@ Global
 		{83D48FD4-D2EA-4AF0-8DD6-DE473870B581}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83D48FD4-D2EA-4AF0-8DD6-DE473870B581}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83D48FD4-D2EA-4AF0-8DD6-DE473870B581}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A6F0CC9-94D9-426E-B51B-CCB181653D1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A6F0CC9-94D9-426E-B51B-CCB181653D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A6F0CC9-94D9-426E-B51B-CCB181653D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A6F0CC9-94D9-426E-B51B-CCB181653D1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +96,7 @@ Global
 		{6CAB4DB9-4512-432A-8FC2-C24C54A54BD7} = {26B8359B-604E-4CDD-B472-B786AB92E040}
 		{369774D1-47AD-4C44-987D-457FB92C3C82} = {26B8359B-604E-4CDD-B472-B786AB92E040}
 		{83D48FD4-D2EA-4AF0-8DD6-DE473870B581} = {26B8359B-604E-4CDD-B472-B786AB92E040}
+		{2A6F0CC9-94D9-426E-B51B-CCB181653D1A} = {A4B58E61-6E37-4B92-AC15-5BBF75D5F2F2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DA0E8084-2F0A-4F3C-9007-10B48D8CC9B6}
