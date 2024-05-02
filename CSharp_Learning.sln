@@ -15,9 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson05_IfStatmentForStruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson06_ErrorHandling", "Lesson06_ErrorHandling\Lesson06_ErrorHandling.csproj", "{79353736-8172-444E-8590-011656540075}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Learning", "Learning", "{26B8359B-604E-4CDD-B472-B786AB92E040}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C-Sharp_Learning", "C-Sharp_Learning", "{26B8359B-604E-4CDD-B472-B786AB92E040}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{7E812692-C0BC-4A89-91DD-BF24C6997F02}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C-Sharp_Projects", "C-Sharp_Projects", "{7E812692-C0BC-4A89-91DD-BF24C6997F02}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentEnDecoder", "Projects\DocumentEnDecoder\DocumentEnDecoder.csproj", "{CB68AB79-8C40-4924-9D8F-27FC920E48E7}"
 EndProject
