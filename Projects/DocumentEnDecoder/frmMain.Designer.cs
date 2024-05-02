@@ -35,14 +35,13 @@ namespace DocumentEnDecoder
             this.txtResult = new System.Windows.Forms.RichTextBox();
             this.btnDecoder = new System.Windows.Forms.Button();
             this.btnEncoder = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSaveAs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLoadFile
             // 
-            this.btnLoadFile.Location = new System.Drawing.Point(568, 12);
+            this.btnLoadFile.Location = new System.Drawing.Point(583, 12);
             this.btnLoadFile.Name = "btnLoadFile";
             this.btnLoadFile.Size = new System.Drawing.Size(94, 29);
             this.btnLoadFile.TabIndex = 0;
@@ -54,7 +53,7 @@ namespace DocumentEnDecoder
             // 
             this.txtPath.Location = new System.Drawing.Point(12, 14);
             this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(550, 27);
+            this.txtPath.Size = new System.Drawing.Size(565, 27);
             this.txtPath.TabIndex = 1;
             // 
             // txtFileData
@@ -96,17 +95,6 @@ namespace DocumentEnDecoder
             this.btnEncoder.UseVisualStyleBackColor = true;
             this.btnEncoder.Click += new System.EventHandler(this.btnEncoder_Click);
             // 
-            // btnSave
-            // 
-            this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(783, 12);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(94, 29);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -123,9 +111,9 @@ namespace DocumentEnDecoder
             this.btnSaveAs.Enabled = false;
             this.btnSaveAs.Location = new System.Drawing.Point(683, 12);
             this.btnSaveAs.Name = "btnSaveAs";
-            this.btnSaveAs.Size = new System.Drawing.Size(94, 29);
+            this.btnSaveAs.Size = new System.Drawing.Size(194, 29);
             this.btnSaveAs.TabIndex = 8;
-            this.btnSaveAs.Text = "Save As";
+            this.btnSaveAs.Text = "Save Change";
             this.btnSaveAs.UseVisualStyleBackColor = true;
             this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
             // 
@@ -136,7 +124,6 @@ namespace DocumentEnDecoder
             this.ClientSize = new System.Drawing.Size(889, 617);
             this.Controls.Add(this.btnSaveAs);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnEncoder);
             this.Controls.Add(this.btnDecoder);
             this.Controls.Add(this.txtResult);
@@ -159,7 +146,6 @@ namespace DocumentEnDecoder
         private System.Windows.Forms.RichTextBox txtResult;
         private System.Windows.Forms.Button btnDecoder;
         private System.Windows.Forms.Button btnEncoder;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSaveAs;
     }

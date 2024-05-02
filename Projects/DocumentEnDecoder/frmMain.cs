@@ -18,13 +18,6 @@ namespace DocumentEnDecoder
             InitializeComponent();
         }
 
-        Mode_State mode = new Mode_State();
-        private enum Mode_State
-        {
-            save,
-            encoder,
-            decoder
-        }
 
         private void btnLoadFile_Click(object sender, EventArgs e)
         {
@@ -36,7 +29,6 @@ namespace DocumentEnDecoder
                 FileInfo fileInfo;
 
                 if (openFileDialog.ShowDialog() != DialogResult.OK) return;
-                mode = Mode_State.save;
 
                 this.txtPath.Text = openFileDialog.FileName.ToString();
                 fileInfo = new FileInfo(this.txtPath.Text);
@@ -45,31 +37,16 @@ namespace DocumentEnDecoder
                 this.btnDecoder.Enabled = !(this.btnEncoder.Enabled);
 
 
-                using (System.IO.StreamReader streamReader = new System.IO.StreamReader(this.txtPath.Text))
+                
+                using (StreamReader reader = new StreamReader(fileInfo.FullName))
                 {
-                    this.txtFileData.Text = streamReader.ReadToEnd();
+                    string line;
+                    // Read line by line
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        this.txtFileData.Text += line;
+                    }
                 }
-                textChangeMode = true;
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(this.txtPath.Text))
-                {
-                    streamWriter.Write(this.txtResult.Text);
-                }
-
-                MessageBox.Show(this, "save success", "save", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                this.btnSave.Enabled = this.btnSaveAs.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -111,59 +88,49 @@ namespace DocumentEnDecoder
             return result;
         }
 
-        
+
 
         private void btnEncoder_Click(object sender, EventArgs e)
         {
             this.txtResult.Text = Changing_Char(StringToBinary(this.txtFileData.Text));
-            mode = Mode_State.encoder;
-            this.btnSave.Enabled = false;
             this.btnSaveAs.Enabled = true;
+            this.btnSaveAs.Tag = "encoder";
         }
 
         private void btnDecoder_Click(object sender, EventArgs e)
         {
-            this.txtResult.Text = BinaryToString(this.txtFileData.Text);
+            this.txtResult.Text = BinaryToString(Changing_Char(this.txtFileData.Text));
+            this.btnSaveAs.Enabled = true;
+            this.btnSaveAs.Tag = "decoder";
         }
 
         private void btnSaveAs_Click(object sender, EventArgs e)
         {
             try
             {
-                if (mode == Mode_State.save)
+                if (this.btnSaveAs.Tag.ToString() == "encoder")
                 {
-                    SaveFileDialog saveFileDialog = new SaveFileDialog();
-                    saveFileDialog.DefaultExt = "txt";
-                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    string fileName = this.txtPath.Text.Substring(0, this.txtPath.Text.Length - 3) + "enc";
+                    var f = File.Create(fileName);
+                    using (System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(f))
                     {
-                        using (System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(saveFileDialog.FileName))
-                        {
-                            streamWriter.Write(this.txtResult.Text);
-                        }
-
-                        this.txtPath.Text = saveFileDialog.FileName.ToString();
-                        MessageBox.Show(this, "save success in " + saveFileDialog.FileName.ToString(), "save", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.btnSave.Enabled = this.btnSaveAs.Enabled = false;
+                        streamWriter.Write(this.txtResult.Text);
                     }
+                    f.Close();
+                    File.Delete(this.txtPath.Text);
+                    MessageBox.Show(this, "save success in " + this.txtPath.Text, "save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
                 }
-                else if (mode == Mode_State.encoder)
+                else if (this.btnSaveAs.Tag.ToString() == "decoder")
                 {
-                    SaveFileDialog saveFileDialog = new SaveFileDialog();
-                    saveFileDialog.DefaultExt = "enc";
-                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    using (System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(this.txtPath.Text))
                     {
-                        using (System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(saveFileDialog.FileName))
-                        {
-                            streamWriter.Write(this.txtResult.Text);
-                        }
-
-                        MessageBox.Show(this, "save success in " + saveFileDialog.FileName.ToString(), "save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        streamWriter.Write(this.txtResult.Text);
                     }
 
-                    this.btnSave.Enabled = this.btnSaveAs.Enabled = this.btnEncoder.Enabled = this.btnDecoder.Enabled = false;
-                    this.btnLoadFile.Enabled = true;
+                    MessageBox.Show(this, "save success in " + this.txtPath.Text, "save", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -172,13 +139,9 @@ namespace DocumentEnDecoder
             }
         }
 
-        bool textChangeMode = false;
         private void txtFileData_TextChanged(object sender, EventArgs e)
         {
-            if (textChangeMode)
-            {
-                this.btnSave.Enabled = this.btnSaveAs.Enabled = true;
-            }
+           
         }
     }
 }
